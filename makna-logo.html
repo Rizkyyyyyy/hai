@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumah Inovasi Klinik (RINO) - Makna Logo</title>
+
+    <style>
+        /* === FONT & VARIABEL GLOBAL === */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --font-family: 'Poppins', sans-serif;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        /* === RESET DASAR & STYLE GLOBAL === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--white-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+        
+        /* === HEADER & NAVBAR (SAMA) === */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark-color);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+            background-color: #e7f1ff;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white-color);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            padding: 10px 0;
+            min-width: 200px;
+        }
+        
+        .dropdown-menu a.active {
+             background-color: #e7f1ff;
+             color: var(--primary-color);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            width: 100%;
+            color: var(--dark-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--dark-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background-image: url('img/ae.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            color: var(--white-color);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+
+        /* === LOGO & FILOSOFI SECTION === */
+        .logo-philosophy-section {
+            padding: 80px 20px;
+            background-color: var(--white-color);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .logo-explanation {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .logo-container {
+            flex: 0 0 250px; /* Lebar tetap untuk logo */
+            text-align: center;
+        }
+        .logo-image {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .philosophy-content {
+            flex: 1; /* Konten mengambil sisa ruang */
+        }
+        .philosophy-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .philosophy-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .philosophy-text .highlight {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .philosophy-text .conclusion {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;
+        }
+        
+        /* === FOOTER (SAMA) === */
+        footer {
+            background-color: #1c1c1c;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            color: var(--white-color);
+            margin-bottom: 20px;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .hero-content h1, .section-header h2 {
+                font-size: 2rem;
+            }
+            .logo-explanation {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                background-color: var(--white-color);
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                gap: 0;
+            }
+            .nav-links.active { left: 0; }
+            .nav-links li { padding: 1rem 0; }
+            .hamburger { display: block; }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="img/az.jpg" alt="Logo RINO">
+                    <span class="logo-text">RINO</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle">Profil <i class="dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sambutan.html">Sambutan Founder</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="makna-logo.html">Makna Logo</a></li>
+                            <li><a href="fotokegiatan.html">Foto Kegiatan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Makna Logo</h1>
+                <p>Setiap elemen dalam logo kami memiliki makna dan filosofi yang mendalam.</p>
+            </div>
+        </section>
+
+        <section class="logo-philosophy-section">
+            <div class="container">
+                 <div class="section-header">
+                    <h2>Identitas Visual RINO</h2>
+                </div>
+                <div class="logo-explanation">
+                    <div class="logo-container">
+                        <img src="img/az.jpg" alt="Logo RINO" class="logo-image">
+                    </div>
+                    <div class="philosophy-content">
+                        <h2>Filosofi di Balik Nama</h2>
+                        <div class="philosophy-text">
+                            <p>Rumah Inovasi Klinik mengandung filosofi yang mendalam. Kata <span class="highlight">"Rumah"</span> melambangkan tempat yang aman, nyaman, dan inklusif; sebuah pusat berkumpul yang mendorong interaksi serta pertukaran ide secara konstruktif.</p>
+                            <p>Istilah <span class="highlight">"Inovasi"</span> mencerminkan semangat pembaruan yang berkelanjutan, sebagai komitmen untuk terus mengembangkan solusi dan pendekatan yang lebih efektif dalam pelayanan kesehatan.</p>
+                            <p>Sementara itu, <span class="highlight">"Klinik"</span> secara eksplisit menunjukkan fokus utama lembaga ini, yakni penguatan dan pengembangan unit layanan kesehatan tingkat pertama.</p>
+                            <p class="conclusion">Secara keseluruhan, nama "Rumah Inovasi Klinik" merepresentasikan sebuah ekosistem kolaboratif untuk menciptakan terobosan yang relevan dan berdampak bagi kualitas layanan kesehatan di Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rumah Inovasi Klinik</h3>
+                    <p>Pusat studi pengembangan klinik untuk meningkatkan mutu pelayanan kesehatan tingkat pertama di Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>FB</span></a>
+                        <a href="#" aria-label="Twitter"><span>TW</span></a>
+                        <a href="https://www.instagram.com/rumah_inovasi_klinik/" aria-label="Instagram"><span>IG</span></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="contact-info">
+                        <li>Alamat: Jl Delanggu-Polanharjo no 41, Rejosari, Sabrang, Delanggu. Kabupaten Klaten,Jawa Tengah Indonesia</li>
+                        <li>Email: rumahinovasiklinik@gmail.com</li>
+                        <li>Telp: 0813-7070-9042</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Rumah Inovasi Klinik (RINO). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // === FUNGSI MENU HAMBURGER ===
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            // === FUNGSI MENANDAI LINK AKTIF ===
+            const allLinks = document.querySelectorAll('.nav-links a');
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            allLinks.forEach(link => {
+                const linkHref = link.getAttribute("href");
+
+                if (linkHref === currentPage) {
+                    link.classList.add("active");
+
+                    // Jika link yang aktif ada di dalam dropdown, tandai juga parentnya
+                    const parentDropdown = link.closest('.dropdown');
+                    if (parentDropdown) {
+                        parentDropdown.querySelector('.dropdown-toggle').classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Rumah Inovasi Klinik (RINO) untuk pertanyaan, kolaborasi, atau informasi lebih lanjut. Kami siap terhubung dengan Anda.">
+    <meta name="keywords" content="kontak rino, hubungi rino, alamat rino, email rino, kolaborasi klinik">
+    <title>Rumah Inovasi Klinik (RINO) - Kontak</title>
+
+    <style>
+        /* === FONT & VARIABEL GLOBAL === */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --font-family: 'Poppins', sans-serif;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --border-color: #dee2e6;
+        }
+
+        /* === RESET DASAR & STYLE GLOBAL === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); line-height: 1.6; color: var(--dark-color); background-color: var(--white-color); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { line-height: 1.2; margin-bottom: 1rem; }
+        a { text-decoration: none; color: var(--primary-color); }
+        ul { list-style: none; }
+        
+        /* === HEADER & NAVBAR (SAMA) === */
+        header { background-color: var(--white-color); box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { display: flex; align-items: center; gap: 10px; color: var(--dark-color); }
+        .logo img { height: 40px; }
+        .logo-text { font-weight: bold; font-size: 24px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--dark-color); font-weight: 600; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s, color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-color); background-color: #e7f1ff; }
+        .dropdown { position: relative; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--white-color); box-shadow: var(--box-shadow); border-radius: var(--border-radius); padding: 10px 0; min-width: 200px; }
+        .dropdown-menu a.active { background-color: #e7f1ff; color: var(--primary-color); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu a { display: block; padding: 10px 20px; width: 100%; color: var(--dark-color); }
+        .hamburger { display: none; cursor: pointer; }
+        .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--dark-color); transition: all 0.3s ease-in-out; }
+
+        /* === HERO SECTION === */
+        .hero { background-size: cover; background-position: center; padding: 100px 20px; color: var(--white-color); text-align: center; position: relative; }
+        .hero-kontak { background-image: url('img/as.jpeg'); }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-content h1 { font-size: 3rem; }
+        .hero-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+
+        /* === CONTACT SECTION === */
+        .section { padding: 80px 0; }
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+        }
+        .contact-details h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .contact-info-item .icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            width: 30px;
+            text-align: center;
+        }
+        .contact-info-item p {
+            margin: 0;
+            line-height: 1.4;
+        }
+        .contact-info-item strong { display: block; color: var(--dark-color); }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* === FOOTER (SAMA) === */
+        footer { background-color: #1c1c1c; color: #ccc; padding: 50px 0 20px; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
+        .footer-column { flex: 1; min-width: 250px; }
+        .footer-column h3 { color: var(--white-color); margin-bottom: 20px; }
+        .copyright { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.9rem; }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .contact-container { padding: 30px; }
+            .contact-details h2 { font-size: 2rem; }
+            .nav-links { position: fixed; left: -100%; top: 70px; background-color: var(--white-color); flex-direction: column; width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 10px rgba(0,0,0,0.1); gap: 0; }
+            .nav-links.active { left: 0; }
+            .nav-links li { padding: 1rem 0; }
+            .hamburger { display: block; }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="img/az.jpg" alt="Logo RINO">
+                    <span class="logo-text">RINO</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle">Profil <i class="dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sambutan.html">Sambutan Founder</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="makna-logo.html">Makna Logo</a></li>
+                            <li><a href="fotokegiatan.html">Foto Kegiatan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero hero-kontak">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Hubungi Kami</h1>
+                <p>Kami siap menjawab pertanyaan Anda dan menjalin kolaborasi untuk memajukan inovasi klinik di Indonesia.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-details">
+                        <h2>Informasi & Lokasi</h2>
+                           <head>
+                                <style>
+                                    .map-button {
+                                        display: inline-block;
+                                        margin-top: 8px;
+                                        padding: 10px 15px;
+                                        background-color: #4285F4; /* Warna biru khas Google */
+                                        color: white;
+                                        text-decoration: none;
+                                        border-radius: 5px;
+                                        font-weight: bold;
+                                        font-size: 14px;
+                                        transition: background-color 0.3s;
+                                    }
+                                    .map-button:hover {
+                                        background-color: #3367D6; /* Warna biru sedikit lebih gelap saat disentuh */
+                                    }
+                                </style>
+                            </head>
+
+                            <body>
+                                <div class="contact-info-item">
+                                    <span class="icon">📍</span>
+                                    <p><strong>Alamat:</strong><br>
+                                        Jl Delanggu-Polanharjo no 41, Rejosari, Sabrang, Delanggu. Kabupaten Klaten,Jawa Tengah Indonesia
+                                    </p>
+                                    <a href="https://maps.google.com/?cid=9230758567673712689&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" class="map-button" target="_blank" rel="noopener noreferrer">
+                                        Buka di Google Maps
+                                    </a>
+                                </div>
+                            </body>
+                        <div class="contact-info-item">
+                             <span class="icon">✉️</span>
+                             <p><strong>Email</strong>rumahinovasiklinik@gmail.com</p>
+                        </div>
+                        <div class="contact-info-item">
+                             <span class="icon">📞</span>
+                             <p><strong>Telepon</strong>0813-7070-9042</p>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126581.1042099039!2d110.52842034335937!3d-7.702801999999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a437f8e80b623%3A0x4027a76e3568c10!2sKlaten%2C%20Kabupaten%20Klaten%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1678886400000!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rumah Inovasi Klinik</h3>
+                    <p>Pusat studi pengembangan klinik untuk meningkatkan mutu pelayanan kesehatan tingkat pertama di Indonesia.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="contact-info-list">
+                        <li>Alamat: Jl Delanggu-Polanharjo no 41, Rejosari, Sabrang, Delanggu. Kabupaten Klaten,Jawa Tengah Indonesia</li>
+                        <li>Email: rumahinovasiklinik@gmail.com</li>
+                        <li>Telp: 0813-7070-9042</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Rumah Inovasi Klinik (RINO). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // === FUNGSI MENU HAMBURGER & NAVIGASI AKTIF ===
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+            const allLinks = document.querySelectorAll('.nav-links a');
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            allLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                    const parentDropdown = link.closest('.dropdown');
+                    if (parentDropdown) {
+                        parentDropdown.querySelector('.dropdown-toggle').classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

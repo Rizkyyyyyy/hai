@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pelajari tentang Rumah Inovasi Klinik (RINO), katalisator pengembangan klinik di Indonesia, beserta visi, misi, dan nilai-nilai kami.">
+    <meta name="keywords" content="tentang rino, visi misi klinik, inovasi kesehatan, filosofi rino">
+    <title>Rumah Inovasi Klinik (RINO) - Tentang Kami</title>
+
+    <style>
+        /* === FONT & VARIABEL GLOBAL === */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --font-family: 'Poppins', sans-serif;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        /* === RESET DASAR & STYLE GLOBAL === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--white-color); /* Ubah background dasar menjadi putih */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .section {
+            padding: 60px 0;
+            background-color: var(--light-color); /* Beri warna latar pada section */
+        }
+        .section:nth-child(odd){
+            background-color: var(--white-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        /* === HEADER & NAVBAR (SAMA SEPERTI INDEX.HTML) === */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--dark-color);
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+            background-color: #e7f1ff;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white-color);
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            padding: 10px 0;
+            min-width: 200px;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--dark-color);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* === HERO SECTION (Style Khusus Halaman Tentang) === */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 100px 20px;
+            color: var(--white-color);
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-tentang {
+             background-image: url('img/ae.jpeg');
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+
+        /* === LOGO & FILOSOFI SECTION === */
+        .logo-philosophy-section {
+            padding: 60px 0;
+            background-color: var(--white-color);
+        }
+        .logo-explanation {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .logo-container {
+            flex: 0 0 200px; /* Lebar tetap untuk logo */
+            text-align: center;
+        }
+        .logo-image {
+            max-width: 100%;
+            border-radius: 50%;
+            box-shadow: var(--box-shadow);
+        }
+        .philosophy-content {
+            flex: 1; /* Konten mengambil sisa ruang */
+        }
+        .philosophy-text p {
+            margin-bottom: 1rem;
+        }
+        .philosophy-text .highlight {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .philosophy-text .conclusion {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--secondary-color);
+            border-left: 3px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* === VISI & MISI SECTION === */
+        .mission-vision-container {
+            display: flex;
+            gap: 40px;
+        }
+        .mission, .vision {
+            flex: 1;
+            padding: 30px;
+            background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        .vision ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .vision li {
+            margin-bottom: 10px;
+        }
+
+        /* === VALUES SECTION (SAMA SEPERTI INDEX.HTML) === */
+        .values-section {
+            padding: 60px 0;
+            background-color: var(--white-color);
+        }
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .value-card {
+            padding: 20px;
+        }
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            stroke: var(--primary-color);
+        }
+        .value-card h3 {
+            font-size: 1.3rem;
+        }
+
+        /* === FOOTER (SAMA SEPERTI INDEX.HTML) === */
+        footer {
+            background-color: #1c1c1c;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .footer-column h3 {
+            color: var(--white-color);
+            margin-bottom: 20px;
+        }
+        .footer-column p {
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            display: inline-block;
+            color: var(--white-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .section-header h2, .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px; /* Sesuaikan dengan tinggi header */
+                background-color: var(--white-color);
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                gap: 0;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .nav-links li {
+                padding: 1rem 0;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+            .logo-explanation, .mission-vision-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .philosophy-text .conclusion {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="img/az.jpg" alt="Logo RINO">
+                    <span class="logo-text">RINO</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle">Profil <i class="dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sambutan.html">Sambutan Founder</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="makna-logo.html">Makna Logo</a></li>
+                            <li><a href="fotokegiatan.html">Foto Kegiatan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero hero-tentang">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Tentang Kami</h1>
+                <p>Pelajari lebih lanjut tentang Rumah Inovasi Klinik, misi, visi, dan nilai-nilai yang kami anut.</p>
+            </div>
+        </section>
+
+        <section class="logo-philosophy-section">
+            <div class="container">
+                <div class="logo-explanation">
+                    <div class="logo-container">
+                        <img src="img/az.jpg" alt="Logo RINO" class="logo-image">
+                    </div>
+                    <div class="philosophy-content">
+                        <h2>Filosofi RINO</h2>
+                        <div class="philosophy-text">
+                            <p>Rumah Inovasi Klinik mengandung filosofi yang mendalam. Kata <span class="highlight">"Rumah"</span> melambangkan tempat yang aman, nyaman, dan inklusif sebuah pusat berkumpul yang mendorong interaksi serta pertukaran ide secara konstruktif.</p>
+                            <p>Istilah <span class="highlight">"Inovasi"</span> mencerminkan semangat pembaruan yang berkelanjutan, sebagai komitmen untuk terus mengembangkan solusi dan pendekatan yang lebih efektif dalam pelayanan kesehatan.</p>
+                            <p>Sementara itu, <span class="highlight">"Klinik"</span> secara eksplisit menunjukkan fokus utama lembaga ini, yakni penguatan dan pengembangan unit layanan kesehatan tingkat pertama.</p>
+                            <p class="conclusion">Secara keseluruhan, nama "Rumah Inovasi Klinik" merepresentasikan sebuah ekosistem kolaboratif yang mendukung pengelola klinik dalam menciptakan terobosan-terobosan yang relevan, berdampak, dan berorientasi pada peningkatan kualitas layanan kesehatan di Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Visi dan Misi Kami</h2>
+                </div>
+                <div class="mission-vision">
+                    <div class="mission-vision-container">
+                        <div class="mission">
+                            <h3>Visi Kami</h3>
+                            <p>Menjadi pusat studi terkemuka dan kolaboratif dalam pengembangan klinik di Indonesia, menghasilkan inovasi yang meningkatkan mutu pelayanan kesehatan tingkat pertama dan berkontribusi pada kesehatan masyarakat yang lebih baik.</p>
+                        </div>
+                        <div class="vision">
+                            <h3>Misi Kami</h3>
+                            <ul>
+                                <li>Melakukan kajian dan penelitian mendalam terkait tantangan dan peluang pengembangan klinik di Indonesia.</li>
+                                <li>Mengidentifikasi, mendokumentasikan, dan menyebarluaskan praktik-praktik inovatif dalam pengelolaan dan pelayanan klinik.</li>
+                                <li>Memfasilitasi kolaborasi dan pertukaran pengetahuan antar pengelola klinik, akademisi, praktisi kesehatan, dan pemangku kepentingan lainnya.</li>
+                                <li>Menyelenggarakan program pelatihan, seminar, dan lokakarya untuk meningkatkan kapasitas pengelola dan staf klinik dalam mengadopsi inovasi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nilai-Nilai Kami</h2>
+                </div>
+                <div class="values-container">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        </div>
+                        <h3>Inovasi</h3>
+                        <p>Mendorong ide-ide baru dan solusi kreatif untuk meningkatkan kualitas klinik.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>Kolaborasi</h3>
+                        <p>Bekerja sama dengan berbagai pihak untuk mencapai tujuan bersama.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3>Integritas</h3>
+                        <p>Menjunjung tinggi etika dan profesionalisme dalam setiap tindakan.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <h3>Berorientasi Pasien</h3>
+                        <p>Mengutamakan kebutuhan dan kesejahteraan pasien dalam setiap inisiatif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rumah Inovasi Klinik</h3>
+                    <p>Pusat studi pengembangan klinik untuk meningkatkan mutu pelayanan kesehatan tingkat pertama di Indonesia.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>FB</span></a>
+                        <a href="#" aria-label="Twitter"><span>TW</span></a>
+                        <a href="https://www.instagram.com/rumah_inovasi_klinik/" aria-label="Instagram"><span>IG</span></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="contact-info">
+                        <li>Alamat: Jl Delanggu-Polanharjo no 41, Rejosari, Sabrang, Delanggu. Kabupaten Klaten,Jawa Tengah Indonesia</li>
+                        <li>Email: rumahinovasiklinik@gmail.com</li>
+                        <li>Telp: 0813-7070-9042</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Rumah Inovasi Klinik (RINO). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // === FUNGSI MENU HAMBURGER ===
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            // Menutup menu saat link di klik (untuk mobile)
+            document.querySelectorAll(".nav-links li a").forEach(link => {
+                link.addEventListener("click", () => {
+                    if (navLinks.classList.contains("active")) {
+                        hamburger.classList.remove("active");
+                        navLinks.classList.remove("active");
+                    }
+                });
+            });
+
+            // === FUNGSI MENANDAI LINK AKTIF ===
+            const allLinks = document.querySelectorAll('.nav-links a');
+            // Ganti nama file ini dengan nama file halaman yang sebenarnya, misal "tentang.html"
+            // Untuk halaman ini kita set manual karena tidak ada file lain
+            const currentPageName = "tentang.html"; 
+
+            allLinks.forEach(link => {
+                const linkHref = link.getAttribute("href");
+                
+                // Cari link 'Profil' dan beri kelas active jika kita di halaman 'tentang.html'
+                if (link.textContent.trim() === "Profil") {
+                    // Logika ini bisa disesuaikan, untuk saat ini kita anggap 'tentang.html'
+                    // adalah bagian dari profil, jadi kita tandai parent-nya
+                    // Anda bisa mengganti "tentang.html" dengan nama file yang sesuai
+                    const profilPages = ["sambutan.html", "visi-misi.html", "makna-logo.html", "fotokegiatan.html", "tentang.html"];
+                    if(profilPages.includes(currentPageName)) {
+                         link.classList.add("active");
+                    }
+                } else if (linkHref === currentPageName) {
+                    link.classList.add("active");
+                }
+            });
+             // Logika khusus untuk menandai menu "Profil" sebagai aktif
+            // karena "Tentang Kami" adalah bagian dari Profil.
+            // Anda bisa menghapus ini jika tidak diperlukan
+            const profilToggle = document.querySelector('.dropdown-toggle');
+            if (profilToggle) {
+                // Secara sederhana kita anggap halaman ini bagian dari profil
+                profilToggle.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

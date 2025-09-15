@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kenali struktur organisasi Rumah Inovasi Klinik (RINO) yang mendukung setiap program dan inisiatif kami untuk memajukan inovasi klinik di Indonesia.">
+    <meta name="keywords" content="struktur organisasi rino, tim rino, dewan penasehat rino, direktur rino">
+    <title>Rumah Inovasi Klinik (RINO) - Struktur Organisasi</title>
+
+    <style>
+        /* === FONT & VARIABEL GLOBAL === */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --font-family: 'Poppins', sans-serif;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --border-color: #dee2e6;
+        }
+
+        /* === RESET DASAR & STYLE GLOBAL === */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-family); line-height: 1.6; color: var(--dark-color); background-color: var(--white-color); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        h1, h2, h3 { line-height: 1.2; margin-bottom: 1rem; }
+        a { text-decoration: none; color: var(--primary-color); }
+        ul { list-style: none; }
+        
+        /* === HEADER & NAVBAR (SAMA) === */
+        header { background-color: var(--white-color); box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { display: flex; align-items: center; gap: 10px; color: var(--dark-color); }
+        .logo img { height: 40px; }
+        .logo-text { font-weight: bold; font-size: 24px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--dark-color); font-weight: 600; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s, color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-color); background-color: #e7f1ff; }
+        .dropdown { position: relative; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--white-color); box-shadow: var(--box-shadow); border-radius: var(--border-radius); padding: 10px 0; min-width: 200px; }
+        .dropdown-menu a.active { background-color: #e7f1ff; color: var(--primary-color); }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu a { display: block; padding: 10px 20px; width: 100%; color: var(--dark-color); }
+        .hamburger { display: none; cursor: pointer; }
+        .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: var(--dark-color); transition: all 0.3s ease-in-out; }
+
+        /* === HERO SECTION === */
+        .hero { background-size: cover; background-position: center; padding: 100px 20px; color: var(--white-color); text-align: center; position: relative; }
+        .hero-struktur { background-image: url('img/ag.jpeg'); }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-content h1 { font-size: 3rem; }
+        .hero-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+
+        /* === STRUCTURE CONTENT SECTION === */
+        .section { padding: 80px 0; }
+        .structure-content { text-align: center; }
+        .structure-content h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; }
+        .structure-content > .container > p { font-size: 1.1rem; color: var(--secondary-color); max-width: 800px; margin: 0 auto 50px; }
+
+        /* === ORGANIZATIONAL CHART === */
+        .organizational-chart { margin-top: 40px; }
+        .organizational-chart h3 { font-size: 1.8rem; margin-bottom: 40px; color: var(--primary-color); }
+        .org-tree { display: flex; flex-direction: column; align-items: center; }
+        .level { display: flex; justify-content: center; margin-bottom: 30px; }
+        .box {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--primary-color);
+            padding: 20px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            min-width: 280px;
+            text-align: center;
+            position: relative;
+        }
+        .position { font-size: 1.2rem; font-weight: 600; color: var(--dark-color); margin-bottom: 8px; }
+        .name { font-size: 1rem; color: var(--secondary-color); }
+        
+        /* Connector Lines */
+        .level .box::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: var(--border-color);
+        }
+        /* Hide line from the last level */
+        .level-4 .box::after, .level-4 .multi-box .box::after { display: none; }
+        
+        .level-4 { width: 100%; max-width: 700px; }
+        .multi-box { display: flex; justify-content: space-around; width: 100%; position: relative; }
+        
+        /* Horizontal line connecting the last level */
+        .multi-box::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background-color: var(--border-color);
+        }
+        /* Vertical line connecting to the horizontal line */
+        .multi-box::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background-color: var(--border-color);
+        }
+        .multi-box .box { flex-basis: 45%; }
+        
+        /* === FOOTER (SAMA) === */
+        footer { background-color: #1c1c1c; color: #ccc; padding: 50px 0 20px; }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; }
+        .footer-column { flex: 1; min-width: 250px; }
+        .footer-column h3 { color: var(--white-color); margin-bottom: 20px; }
+        .copyright { text-align: center; border-top: 1px solid #444; padding-top: 20px; font-size: 0.9rem; }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .hero-content h1, .structure-content h2 { font-size: 2rem; }
+            .nav-links { position: fixed; left: -100%; top: 70px; background-color: var(--white-color); flex-direction: column; width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 10px rgba(0,0,0,0.1); gap: 0; }
+            .nav-links.active { left: 0; }
+            .nav-links li { padding: 1rem 0; }
+            .hamburger { display: block; }
+            .hamburger.active .bar:nth-child(2) { opacity: 0; }
+            .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+            .multi-box { flex-direction: column; gap: 60px; align-items: center; }
+            .multi-box::before, .multi-box::after { display: none; }
+            .multi-box .box::before {
+                content: '';
+                position: absolute;
+                top: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 30px;
+                background-color: var(--border-color);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="img/az.jpg" alt="Logo RINO">
+                    <span class="logo-text">RINO</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle">Profil <i class="dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sambutan.html">Sambutan Founder</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="makna-logo.html">Makna Logo</a></li>
+                            <li><a href="fotokegiatan.html">Foto Kegiatan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="program.html">Program</a></li>
+                    <li><a href="struktur.html">Struktur</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero hero-struktur">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Struktur Organisasi</h1>
+                <p>Kenali tim solid di balik layar yang mendukung setiap program dan inisiatif Rumah Inovasi Klinik.</p>
+            </div>
+        </section>
+
+        <section class="section structure-content">
+            <div class="container">
+                <h2>Struktur Organisasi RINO</h2>
+                <p>Rumah Inovasi Klinik (RINO) memiliki struktur organisasi yang dirancang untuk mendukung kolaborasi, efisiensi, dan pencapaian tujuan kami dalam memajukan inovasi di klinik Indonesia.</p>
+
+                <div class="organizational-chart">
+                    <h3>Diagram Organisasi</h3>
+                    <div class="org-tree">
+                        <div class="level level-1">
+                            <div class="box">
+                                <div class="position">Dewan Penasehat</div>
+                                <div class="name">Dr Telogo Wismo Agung Durmanto<br>DR dr Yopi Harwinanda Ardesa</div>
+                            </div>
+                        </div>
+                        
+                        <div class="level level-2">
+                            <div class="box">
+                                <div class="position">Direktur Umum</div>
+                                <div class="name">DR Dr Muh Husen Prabowo, MPH</div>
+                            </div>
+                        </div>
+                        
+                        <div class="level level-3">
+                            <div class="box">
+                                <div class="position">Direktur Operasional</div>
+                                <div class="name">Dr Ita Kusumawati, MKes SpKKLP</div>
+                            </div>
+                        </div>
+                        
+                        <div class="level level-4">
+                            <div class="multi-box">
+                                <div class="box">
+                                    <div class="position">Jaringan dan Komunikasi</div>
+                                </div>
+                                <div class="box">
+                                    <div class="position">Administrasi dan Keuangan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Rumah Inovasi Klinik</h3>
+                    <p>Pusat studi pengembangan klinik untuk meningkatkan mutu pelayanan kesehatan tingkat pertama di Indonesia.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="contact-info">
+                        <li>Alamat: Jl Delanggu-Polanharjo no 41, Rejosari, Sabrang, Delanggu. Kabupaten Klaten,Jawa Tengah Indonesia</li>
+                        <li>Email: rumahinovasiklinik@gmail.com</li>
+                        <li>Telp: 0813-7070-9042</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Rumah Inovasi Klinik (RINO). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // === FUNGSI MENU HAMBURGER & NAVIGASI AKTIF ===
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+            const allLinks = document.querySelectorAll('.nav-links a');
+            const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            allLinks.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                    const parentDropdown = link.closest('.dropdown');
+                    if (parentDropdown) {
+                        parentDropdown.querySelector('.dropdown-toggle').classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
